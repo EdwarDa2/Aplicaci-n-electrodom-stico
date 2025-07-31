@@ -8,7 +8,6 @@ public class Main {
 
         ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>(10);
 
-
         electrodomesticos.add(new Lavadora());
         electrodomesticos.add(new Television());
         electrodomesticos.add(new Lavadora(280, 60));
@@ -24,23 +23,31 @@ public class Main {
         double totalTelevisores = 0;
         double totalElectrodomesticos = 0;
 
+        int contador = 1;
 
+        System.out.println("== DETALLE DE PRECIOS POR ELECTRODOMÉSTICO ==\n");
 
+        // Imprimir detalles de cada electrodoméstico
         for (Electrodomestico electrodomestico : electrodomesticos) {
             double precioActual = electrodomestico.precioFinal();
             totalElectrodomesticos += precioActual;
 
-
+            String tipo = "Electrodoméstico básico";  // Por defecto
             if (electrodomestico instanceof Lavadora) {
+                tipo = "Lavadora";
                 totalLavadoras += precioActual;
             } else if (electrodomestico instanceof Television) {
+                tipo = "Televisión";
                 totalTelevisores += precioActual;
             }
+
+            System.out.printf("Electrodoméstico %d: %.2f€ (%s)\n", contador++, precioActual, tipo);
         }
 
-
-        System.out.println("Total de Lavadoras: " + totalLavadoras);
-        System.out.println("Total de Televisores: " + totalTelevisores);
-        System.out.println("Total de Electrodomésticos: " + totalElectrodomesticos);
+        // Imprimir resumen
+        System.out.println("\n== RESUMEN DE PRECIOS POR CATEGORÍA ==\n");
+        System.out.printf("Precio total de todos los electrodomésticos: %.2f€\n", totalElectrodomesticos);
+        System.out.printf("Precio total de Lavadoras: %.2f€\n", totalLavadoras);
+        System.out.printf("Precio total de Televisores: %.2f€\n", totalTelevisores);
     }
 }
