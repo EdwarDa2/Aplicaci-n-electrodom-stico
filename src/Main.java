@@ -8,25 +8,28 @@ public class Main {
 
         ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>(10);
 
-        electrodomesticos.add(new Lavadora(22, 26));
-        electrodomesticos.add(new Television(100, 15));
-        electrodomesticos.add(new Lavadora(200, 25));
-        electrodomesticos.add(new Television(500, 20));
-        electrodomesticos.add(new Lavadora(250, 30));
-        electrodomesticos.add(new Television(300, 20));
-        electrodomesticos.add(new Lavadora(150, 18));
-        electrodomesticos.add(new Television(450, 26));
-        electrodomesticos.add(new Lavadora(250, 31));
-        electrodomesticos.add(new Television(200, 225));
+
+        electrodomesticos.add(new Lavadora());
+        electrodomesticos.add(new Television());
+        electrodomesticos.add(new Lavadora(280, 60));
+        electrodomesticos.add(new Television(200, 10));
+        electrodomesticos.add(new Lavadora(150, "rojo", 'B', 15, 25));
+        electrodomesticos.add(new Television(100, "negro", 'C', 30, 50, true));
+        electrodomesticos.add(new Lavadora(200, "gris", 'A', 40, 35));
+        electrodomesticos.add(new Television(125, "azul", 'F', 85, 60, false));
+        electrodomesticos.add(new Lavadora(85, 20));
+        electrodomesticos.add(new Lavadora(110, "negro", 'C', 30, 35));
 
         double totalLavadoras = 0;
         double totalTelevisores = 0;
         double totalElectrodomesticos = 0;
 
 
+
         for (Electrodomestico electrodomestico : electrodomesticos) {
             double precioActual = electrodomestico.precioFinal();
             totalElectrodomesticos += precioActual;
+
 
             if (electrodomestico instanceof Lavadora) {
                 totalLavadoras += precioActual;
@@ -35,9 +38,9 @@ public class Main {
             }
         }
 
+
         System.out.println("Total de Lavadoras: " + totalLavadoras);
         System.out.println("Total de Televisores: " + totalTelevisores);
         System.out.println("Total de Electrodomésticos: " + totalElectrodomesticos);
-
     }
 }
