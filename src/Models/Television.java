@@ -33,8 +33,8 @@
         }
 
         @Override
-        public int precioFinal() {
-            int precioFinal = super.precioFinal();
+        public float precioFinal() {
+            float precioFinal = super.precioFinal();
 
             if(resolucion>40){
             precioFinal *= 1.3;

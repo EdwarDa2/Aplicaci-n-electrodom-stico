@@ -29,27 +29,10 @@ protected int peso;
 
     public Electrodomestico(float precio, String color, char consumo_energetico, int peso) {
         this.precio = precio;
-        this.color = color;
-        this.consumo_energetico = consumo_energetico;
+        this.color = comprobarColor(color);
+        this.consumo_energetico = comprobarConsumoEnergetico(consumo_energetico);
         this.peso = peso;
     }
-
-    public String getCOLOR() {
-        return COLOR;
-    }
-
-    public char getCONSUMO_ENERGETICO() {
-        return CONSUMO_ENERGETICO;
-    }
-
-    public int getPESO() {
-        return PESO;
-    }
-
-    public float getPRECIO() {
-        return PRECIO;
-    }
-
     public String[] getNames() {
         return names;
     }
@@ -90,8 +73,8 @@ protected int peso;
         }
         return (flag) ? color : COLOR;
     }
-    public int precioFinal() {
-        int precioFinal = 0;
+    public float precioFinal() {
+        float precioFinal = 0;
         switch (consumo_energetico){
             case 'A' -> {
                 precioFinal = 100;

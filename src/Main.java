@@ -8,16 +8,16 @@ public class Main {
 
         ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>(10);
 
-        electrodomesticos.add(new Lavadora());
-        electrodomesticos.add(new Television());
-        electrodomesticos.add(new Lavadora());
-        electrodomesticos.add(new Television());
-        electrodomesticos.add(new Lavadora());
-        electrodomesticos.add(new Television());
-        electrodomesticos.add(new Lavadora());
-        electrodomesticos.add(new Television());
-        electrodomesticos.add(new Lavadora());
-        electrodomesticos.add(new Television());
+        electrodomesticos.add(new Lavadora(22, 26));
+        electrodomesticos.add(new Television(100, 15));
+        electrodomesticos.add(new Lavadora(200, 25));
+        electrodomesticos.add(new Television(500, 20));
+        electrodomesticos.add(new Lavadora(250, 30));
+        electrodomesticos.add(new Television(300, 20));
+        electrodomesticos.add(new Lavadora(150, 18));
+        electrodomesticos.add(new Television(450, 26));
+        electrodomesticos.add(new Lavadora(250, 31));
+        electrodomesticos.add(new Television(200, 225));
 
         double totalLavadoras = 0;
         double totalTelevisores = 0;
